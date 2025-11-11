@@ -1,0 +1,856 @@
+
+Open In Colab
+Bem Vindas - E esse tal de pyhton?(Fazer o projeto em conjunto)
+Hoje vamos praticar alguns conceitos de python, iremos pegar revisão bem rápida de python básico e depois vamos parti para uma parte mais intermediário, certo?
+
+Aula com a professora: Nicole Pessoa
+Monitora: Amanda Silva
+
+1. Variáveis e Operadores
+O que são variáveis?
+
+São "caixinhas" que armazenam dados na memória. Em Python, não precisamos declarar o tipo (ela é dinâmica).
+
+
+name = "Fernanda" #String (Texto)
+idade = 28     #Int (Números Inteiros)
+altura = 1.55   #Float (Decimal)
+estudante = True #booleano (True/False)
+     
+Operadores Básicos
+Aritméticos: +, -, *, /, // (divisão inteira), % (resto), ** (potência).
+
+Comparação: ==, !=, >, <, >=, <=.
+
+Lógicos: and, or, not.
+
+nota1 = 6.7
+nota2 = 8.7
+print(nota1 // nota2) # operador de divisão inteira. Ele retorna o maior número inteiro que é menor ou igual ao resultado da divisão (ou seja, "corta" as casas decimais).
+print(nota1 > nota2)
+print(nota2 != nota1)
+     
+0.0
+False
+True
+
+#Vamos usar comparação para ver como pode ser usado como exemplo
+if nota1 >= 8:
+  print("Aprovado")
+else:
+  print("Reprovado")
+     
+Reprovado
+2. Estruturas de Dados
+Listas (list)
+
+Ordenadas, mutáveis e permitem itens duplicados.
+Listas são estruturas de dados mutáveis e ordenadas em Python, usadas para armazenar coleções de itens (que podem ser de tipos diferentes). Elas são uma das estruturas mais versáteis e comumente usadas na linguagem.
+
+
+Características Principais:
+
+Mutáveis: Podem ser modificadas após a criação (adicionar, remover ou alterar elementos).
+
+Ordenadas: Os elementos têm uma ordem fixa (indexados por posição, começando em 0).
+
+Aceitam diferentes tipos de dados: Podem armazenar inteiros, strings, floats, outras listas, etc.
+
+Permitem elementos duplicados: Listas podem ter valores repetidos.
+
+
+frutas = [banana,pessego,pera,melancia]
+     
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-5-c8aa46c2a0bf> in <cell line: 0>()
+----> 1 frutas = [banana,pessego,pera,melancia]
+
+NameError: name 'banana' is not defined
+
+frutas = ["banana","pessego","pera","melancia"]
+     
+
+frutas.append("ameixa")  # Adiciona no final
+frutas[2] = "mexerica"      # Altera um item
+print(frutas[0])           # Acessa o primeiro item
+     
+banana
+
+print(frutas)
+     
+['banana', 'pessego', 'mexerica', 'melancia', 'abacaxi', 'ameixa']
+Tuplas (tuple)
+
+Ordenadas, imutáveis e permitem itens duplicados.
+Tuplas (tuples) são estruturas de dados imutáveis e ordenadas em Python, semelhantes a listas, mas com a diferença crucial de que não podem ser modificadas após a criação. Elas são usadas para armazenar coleções de itens, geralmente heterogêneos (dados de tipos diferentes).
+
+Características Principais
+
+Imutáveis: Não podem ser alteradas após a criação (não é possível adicionar, remover ou modificar elementos).
+
+Ordenadas: Os elementos têm uma ordem fixa (indexados por posição, começando em 0).
+
+Aceitam diferentes tipos de dados: Podem armazenar inteiros, strings, floats, listas e até outras tuplas.
+
+Podem ser duplicadas: Permitem elementos repetidos.
+
+As tuplas são definidas usando parênteses ( ), mas os parênteses são opcionais se há pelo menos uma vírgula.
+
+
+#Exemplo 1: Tupla SimplesExemplo 1: Tupla Simples
+coordenadas = (10, 20)
+
+     
+
+#Exemplo 2: Tupla com Um Elemento
+tupla_unica = (42,) #Tupla com um único elemento precisa de vírgula
+nao_e_tupla = (42) #Isso é um número inteiro, não é uma tupla
+     
+Dicionários (dict)
+
+Pares chave-valor, não ordenados, mutáveis.
+
+pessoa = {"nome":"Nicole","idade":30}
+print(pessoa["nome"])
+print(pessoa["idade"])
+     
+Nicole
+30
+3. Loops e Condicionais
+# Condicionais (if, elif, else)
+Executa blocos de código conforme condições.
+
+
+idade = 18
+if idade >= 18:
+  print("Habilitado")
+
+elif idade <= 16:
+  print("Provisória")
+
+else:
+  print("Não habilitado")
+     
+Habilitado
+Loops (for e while)
+
+
+#for (itera sobre sequências)
+numeros = [1,2,3]
+for t in numeros:
+    print(t)
+     
+1
+2
+3
+
+#while (executa enquanto condição for verdadeira)
+contador =  0
+while contador < 3 :
+    print(contador)
+    contador += 1
+     
+0
+1
+2
+O while é uma estrutura de repetição (loop) em Python que executa um bloco de código enquanto uma condição for verdadeira. Ele é útil quando você não sabe quantas vezes o loop precisa repetir, mas tem uma condição de parada definida.
+
+while condição: # Bloco de código que repete # enquanto a condição for True
+
+Define uma variável contador com valor inicial 0.
+
+while: Palavra-chave que inicia o loop.
+
+contador < 3: Condição de repetição. O loop continuará executando enquanto contador for menor que 3.
+
+    print(contador): Exibe o valor atual do contador.
+
+contador += 1: Incrementa contador em 1 (equivalente a contador = contador + 1).
+4. Funções (def)
+Blocos de código reutilizáveis que recebem parâmetros e retornam valores.
+
+
+#Função Básica
+def saudacao(nome):
+    return f"Olá, {nome}"
+
+print(saudacao("Fernanda"))
+     
+Olá, Fernanda
+def → Palavra-chave para definir uma função.
+
+saudacao → Nome da função (escolhido pelo programador).
+
+(nome) → Parâmetro da função (variável que recebe o valor passado quando a função é chamada).
+
+    return → Indica o valor que a função retorna quando é chamada.
+
+f"Olá, {nome}" → f-string (formatação moderna do Python), que insere o valor de nome dentro da string.
+
+saudacao("Nicole") → Chama a função passando "Nicole" como argumento.
+Agora vamos aprofundar mais?
+1. Estruturas de Dados Avançadas
+List Comprehension vs. Loops Tradicionais: Explicação para Iniciantes
+
+Imagina que você tem uma caixa de brinquedos (uma lista) e quer fazer uma operação com cada brinquedo. Você pode fazer isso de 2 formas:
+
+Método Tradicional (Loop For)
+→ Pegar um brinquedo de cada vez, fazer a operação e colocar na nova caixa.
+→ Passo a passo, manualmente.
+
+List Comprehension
+→ Uma "mágica" que transforma toda a caixa de uma vez.
+→ Mais rápido e elegante.
+Exemplo 1: Dobrar Números
+
+Situação: Você tem os números [1, 2, 3] e quer [2, 4, 6].
+
+
+numeros = [1,2,3]
+dobrados = []
+for num in numeros:
+  dobrados.append(num * 2)
+print(dobrados)
+     
+[2, 4, 6]
+
+#Versão com List Comprehension (Mágica)
+numeros =[1,2,3]
+dobrados = [num * 2 for num in numeros]
+print(dobrados)
+     
+[2, 4, 6]
+Comparação:
+
+Loop: 3 linhas (criar lista vazia + loop + append)
+
+List Comprehension: 1 linha só!
+Exemplo 2: Filtrar Frutas
+
+Situação: Você tem ["maçã", "banana", "morango"] e quer só as com "m".
+
+
+#Loop Tradicional
+frutas = ["maçã", "banana", "morango"]
+filtradas = []
+for fruta in frutas:
+  if fruta.startswith("m"):
+    filtradas.append(fruta)
+print(filtradas)
+     
+['maçã', 'morango']
+
+#List Comprehension
+frutas = ["maçã", "banana", "morango"]
+filtradas = [fruta for fruta in frutas if fruta.startswith("m")]
+print(filtradas)
+     
+['maçã', 'morango']
+Loop Tradicional: Quando a lógica é complexa (muitos passos), Quando precisa de break ou continue e Melhor para iniciantes entenderem.
+
+List Comprehension: Para operações simples e transformações rápidas, Quando quer código mais limpo e Pythonico e Mais eficiente em performance para listas grandes.
+
+b) Sets (Conjuntos)
+
+Úteis para operações matemáticas e remoção de duplicados.
+
+
+#Exemplo 3: União e Interseção
+A = {1,2,3}
+B = {3,4,5}
+print(A.union(B))
+     
+{1, 2, 3, 4, 5}
+
+#Exemplo 4: Remover Duplicados de uma Lista
+lista = [1,2,3,4,4,4]
+unicos = list(set(lista))
+print(unicos)
+     
+[1, 2, 3, 4]
+c) Dicionários Avançados (defaultdict, Counter)
+
+
+from collections import Counter
+
+numeros = [1,2,3,4,4,4]
+contagem = Counter(numeros)
+print(contagem)
+     
+Counter({4: 3, 1: 1, 2: 1, 3: 1})
+Exercício:
+
+Transforme este loop em List Comprehension:
+
+# Loop original
+quadrados = []
+for num in range(1, 6):
+    quadrados.append(num ** 2)
+
+# Sua resposta aqui:
+quadrados = [num **2 for num in range(1, 6)]
+print(quadrados)
+
+2. Manipulação de Arquivos
+a) Lendo e Escrevendo Arquivos
+
+Para entender mais sobre
+
+
+#Exemplo 7: Arquivo TXT
+# Escrevendo
+with open ("dados.txt","w") as arquivo:
+  arquivo.write("python\é\incrivel")
+
+# Lendo
+with open ("dados.txt","r") as arquivo:
+  conteudo = arquivo.read()
+print(conteudo)
+     
+python\é\incrivel
+open("dados.txt", "w"): Abre o arquivo "dados.txt" em modo de escrita ("w")
+
+Se o arquivo não existir, será criado
+
+Se já existir, seu conteúdo será sobrescrito
+with: Garante que o arquivo será fechado automaticamente após o bloco de código
+
+arquivo.write(): Escreve a string no arquivo
+
+open("dados.txt", "r"): Abre o mesmo arquivo em modo de leitura ("r")
+
+arquivo.read(): Lê todo o conteúdo do arquivo e armazena na variável conteudo
+
+print(conteudo): Exibe o conteúdo lido, que será:
+
+Para você entender mais mais sobre importar com Pandas
+
+Aprofando conhecimento de importação com pandas
+
+
+#Exemplo 8: Arquivo CSV (com Pandas)
+import pandas as pd
+# Lendo CSV
+dados = pd.read_csv("/content/dados.csv")
+print(dados.head())
+
+#Exemplo 8: Arquivo CSV (com Pandas)
+import pandas as pd
+# Lendo CSV
+dados = pd.read_csv("dados.csv")
+print(dados.head())
+
+# Calculando média de uma coluna
+media = dados["idade"].mean()
+print(f"Média de idade:{media}")
+     
+      aluno  nota
+0    camile    10
+1  fernanda     9
+      aluno  nota
+0    camile    10
+1  fernanda     9
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+/usr/local/lib/python3.11/dist-packages/pandas/core/indexes/base.py in get_loc(self, key)
+   3804         try:
+-> 3805             return self._engine.get_loc(casted_key)
+   3806         except KeyError as err:
+
+index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+KeyError: 'idade'
+
+The above exception was the direct cause of the following exception:
+
+KeyError                                  Traceback (most recent call last)
+<ipython-input-33-e9a8e0c1ebe8> in <cell line: 0>()
+     12 
+     13 # Calculando média de uma coluna
+---> 14 media = dados["idade"].mean()
+     15 print(f"Média de idade:{media}")
+
+/usr/local/lib/python3.11/dist-packages/pandas/core/frame.py in __getitem__(self, key)
+   4100             if self.columns.nlevels > 1:
+   4101                 return self._getitem_multilevel(key)
+-> 4102             indexer = self.columns.get_loc(key)
+   4103             if is_integer(indexer):
+   4104                 indexer = [indexer]
+
+/usr/local/lib/python3.11/dist-packages/pandas/core/indexes/base.py in get_loc(self, key)
+   3810             ):
+   3811                 raise InvalidIndexError(key)
+-> 3812             raise KeyError(key) from err
+   3813         except TypeError:
+   3814             # If we have a listlike key, _check_indexing_error will raise
+
+KeyError: 'idade'
+
+from google.colab import drive
+drive.mount('/content/drive')
+     
+---------------------------------------------------------------------------
+MessageError                              Traceback (most recent call last)
+<ipython-input-30-d5df0069828e> in <cell line: 0>()
+      1 from google.colab import drive
+----> 2 drive.mount('/content/drive')
+
+/usr/local/lib/python3.11/dist-packages/google/colab/drive.py in mount(mountpoint, force_remount, timeout_ms, readonly)
+     98 def mount(mountpoint, force_remount=False, timeout_ms=120000, readonly=False):
+     99   """Mount your Google Drive at the specified mountpoint path."""
+--> 100   return _mount(
+    101       mountpoint,
+    102       force_remount=force_remount,
+
+/usr/local/lib/python3.11/dist-packages/google/colab/drive.py in _mount(mountpoint, force_remount, timeout_ms, ephemeral, readonly)
+    135   )
+    136   if ephemeral:
+--> 137     _message.blocking_request(
+    138         'request_auth',
+    139         request={'authType': 'dfs_ephemeral'},
+
+/usr/local/lib/python3.11/dist-packages/google/colab/_message.py in blocking_request(request_type, request, timeout_sec, parent)
+    174       request_type, request, parent=parent, expect_reply=True
+    175   )
+--> 176   return read_reply_from_input(request_id, timeout_sec)
+
+/usr/local/lib/python3.11/dist-packages/google/colab/_message.py in read_reply_from_input(message_id, timeout_sec)
+    101     ):
+    102       if 'error' in reply:
+--> 103         raise MessageError(reply['error'])
+    104       return reply.get('data', None)
+    105 
+
+MessageError: Error: credential propagation was unsuccessful
+pd.read_csv(): Função do Pandas para ler arquivos CSV
+
+"dados.csv": Nome do arquivo a ser lido (deve estar no mesmo diretório do script)
+
+Exercício:
+
+Crie um arquivo notas.csv com colunas aluno e nota, depois calcule a média das notas.
+
+
+
+     
+3. Programação Orientada a Objetos (POO)
+a) Classes e Objetos Pense em classes como receitas de bolo e objetos como os bolos prontos.
+
+Parte 1: A Receita (Classe)
+
+Uma classe é como um molde que define:
+
+Atributos: "Ingredientes" do objeto (ex: cor, tamanho).
+
+Métodos: "Ações" que o objeto pode fazer (ex: assar, decorar).
+
+#Exemplo: Classe Bolo
+class Bolo: #Isso é a receita (classe)
+    def __init__(self, sabor, cobertura): #Contrutor (prepara o bolo)
+      self.sabor = sabor #Atributo 1
+      self.cobertura = cobertura #Atributo 2
+    def descrever(self): #Método (Ação)
+      return f"Bolo de {self.sabor} com {self.cobertura}"
+     
+Explicação:
+
+__init__: Método especial que "prepara" o objeto (como misturar os ingredientes).
+
+self.sabor: Cada bolo terá seu próprio sabor (atributo único).
+Parte 2: Os Bolos Prontos (Objetos)
+
+Quando você usa a receita para fazer um bolo, está criando um objeto.
+
+
+#Exemplo: Criando Objetos
+bolo1 = Bolo("chocolate", "granulado") #Bolo 1(objeto)
+bolo2 = Bolo("morango", "chantilly") #Bolo 2(objeto)
+
+print(bolo1.descrever())
+print(bolo2.descrever())
+     
+Por que Usar Classes?
+
+Organização: Agrupa dados (atributos) e ações (métodos) em um único lugar.
+
+Reutilização: Crie vários objetos com a mesma estrutura.
+
+Flexibilidade: Cada objeto pode ter valores diferentes.
+Classe = Planta de uma casa (define como será).
+
+Objeto = Casa construída (pode ter várias, cada uma com suas cores e donos).
+Parte 3: Personalizando Objetos
+
+Você pode modificar atributos depois de criar o objeto: bolo1.cobertura = "castanhas" # Troca a cobertura print(bolo1.descrever()) # Agora: "Bolo de chocolate com castanhas!"
+
+
+  # Troca a cobertura
+  # Agora: "Bolo de chocolate com castanhas!"
+
+  bolo1.cobertura = "castanhas" #trocar a cobertura
+  print(bolo1.descrever())
+     
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-34-f31b8b54db10> in <cell line: 0>()
+      2 # Agora: "Bolo de chocolate com castanhas!"
+      3 
+----> 4 bolo1.cobertura = "castanhas" #trocar a cobertura
+      5 print(bolo1.descrever())
+
+NameError: name 'bolo1' is not defined
+descrever() é um método desse objeto que, pelo nome, deve retornar uma descrição do bolo
+
+Herança e Polimorfismo: Explicação para Iniciantes
+Vamos dar exemplo de algo que vocês conhecem que é o zoológico e iremos organizar um de forma digital, já conseguiu visualizar né?
+
+Herança (Pai e Filho)
+
+O que é?
+
+ É como uma herança de família: um filho herda características do pai.
+
+ No código: uma classe (filha) pode copiar atributos e métodos de outra classe (pai).
+Exemplo Prático:
+
+Todo animal tem um nome e faz um som.
+
+Um cachorro é um animal, então ele herda essas características, mas seu som é diferente ("Au Au!").
+
+
+#Aqui iremos fazer class com animal
+class Animal: #classe pai
+  def __init__(self, nome):
+    self.nome = nome
+  def som(self):
+    return "..."
+class Cachorro(Animal): #classe filha
+  def som(self):
+    return "Au Au" #som específico
+
+rex = Cachorro("Rex")
+print(rex.nome) #herdado do pai: rex
+print(rex.som()) #método sobrescrito: "Au Au"
+     
+Por que usar?
+
+Para não repetir código (ex: todos os animais têm nome, mas cada um faz um som diferente).
+Polimorfismo (Múltiplas Formas)
+É a capacidade de um mesmo método se comportar de formas diferentes dependendo do objeto.
+
+      Igual ao botão "ligar" em aparelhos:
+
+      Na TV: liga a tela.
+
+      No rádio: liga o som.
+Exemplo Prático:
+
+A função fazer_som() funciona para qualquer animal, mas cada um tem sua própria versão do som.
+
+#Vamos fazer som dos animais?
+def fazer_som(animal):
+  print(animal.som())
+
+fazer_som(Cachorro("Rex"))
+     
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-43-288000ddad3b> in <cell line: 0>()
+      3   print(animal.som())
+      4 
+----> 5 fazer_som(Cachorro("Rex"))
+
+NameError: name 'Cachorro' is not defined
+Por que usar?
+
+Para escrever código flexível: a mesma função (fazer_som()) funciona com qualquer animal, sem precisar saber se é um cachorro, gato, etc.
+
+Comparação com o Mundo Real
+
+Conceito: Heranças, Polimorfismo
+Exemplo do Mundo Real (Heranças): Filho herda o sobrenome do pai.
+Exemplo do Mundo Real (Polimorfismo): Botão "ligar" funciona em vários aparelhos.
+Exemplo em Python:
+
+Heranças: Cachorro herda nome de Animal.
+Polimorfismo: fazer_som() funciona com Cachorro, Gato, etc.
+Exercício para Fixar
+
+Crie uma classe Veiculo com método ligar(), e duas subclasses (Carro e Moto) que sobrescrevem esse método:
+
+NumPy: Arrays e Operações Matemáticas
+Pense no NumPy como uma super calculadora para lidar com listas de números. Ele é ultra-rápido e faz contas complexas em uma única linha!
+
+Parte 1: Criando Arrays (Listas Turbinadas)
+
+Array = Lista especial do NumPy que permite cálculos rápidos.
+
+
+#Exemplo 1: Array Básico
+import numpy as np
+
+#Lista comum
+lista = [1, 2, 3]
+
+#Array Numpy
+arr = np.array([1,2,3])
+print(arr)
+     
+[1 2 3]
+Um array é uma estrutura de dados que armazena vários valores em uma única variável
+
+Diferença Chave:
+
+Listas Python: [1, 2, 3]
+
+Arrays NumPy: [1 2 3] (sem vírgulas, e cálculos instantâneos!)
+Parte 2: Operações Vetorizadas (Sem Loops!)
+
+"Vetorizado" = Fazer contas em todos os itens de uma vez (sem for).
+
+
+#Exemplo 2: Soma Relâmpago
+import numpy as np # Import the numpy module with the alias 'np'
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+#Soma tradicional(com loop)
+soma_lenta = [a[i] + b[i] for i in range(3)]
+
+#Soma vetorizadas(numpy)
+soma_rapida = a + b
+
+#resultado [5,7,9]
+     
+range(3)
+
+Gera os índices 0, 1, 2 (ou seja, assume que as listas a e b têm 3 elementos).
+for i in range(3)
+
+Itera sobre os índices i = 0, 1, 2.
+a[i] + b[i]
+
+Para cada índice i, soma o elemento a[i] com b[i].
+
+#Exemplo 3: Matemática em Massa
+import numpy as np # Import the numpy module with the alias 'np'
+
+arr = np.array([1,2,3])
+
+print(arr * 2) # multiplica
+print(arr ** 2) #Elevada ao quadrado: [1 4 9]
+print(np.sqrt(arr)) #Raiz quadrada [1, 1.414....]
+     
+[2 4 6]
+[1 4 9]
+[1.         1.41421356 1.73205081]
+Parte 3: Indexação Avançada
+
+#Exemplo 4: Slicing (Fatiamento)
+import numpy as np # Import the numpy module with the alias 'np'
+arr = np.array([10, 20, 30, 40, 50])
+
+print(arr[1:4])  #Pega do 20 ao 40
+print(arr[:2]) #Pega de 2 em 2 [10 30 50]
+     
+[20 30 40]
+[10 20]
+
+#Exemplo 5: Boolean Masking (Filtro Mágico)
+import numpy as np # Import the numpy module with the alias 'np'
+arr = np.array([1, 2, 3, 4, 5])
+
+#Filtra números maiores que 3
+mascara = arr > 3
+print(mascara) #[False False False True True]
+print(arr[mascara]) #Números pares: [4 5]
+     
+[False False False  True  True]
+[4 5]
+Exercício Prático
+
+Problema: Dado o array [5, 10, 15, 20]:
+
+Calcule a média. (Só usar o mean para calcular a média)
+
+Filtre valores maiores que 10.
+Exercício Geral
+O exercício que combina todos os conceitos que vimos (variáveis, listas, loops, funções, NumPy, POO e operadores)
+
+1. Criar uma Classe Livro
+
+Atributos: titulo (string), autor (string), disponivel (boolean - inicie como True).
+
+Método: emprestar() que muda disponivel para False.
+
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+        self.disponivel = True
+
+    def emprestar(self):
+        self.disponivel = False
+        print(f"O livro '{self.titulo}' foi emprestado.")
+
+    livro1 = Livro("Mulheres que correm com lobos", "Clarissa Pinkola")
+    livro1.emprestar()
+     
+O livro 'Mulheres que correm com lobos' foi emprestado.
+
+
+     
+2. Lista de Livros e Operações
+
+Crie uma lista biblioteca com 3 livros (ex: "Dom Casmurro", "1984", "O Pequeno Príncipe").
+
+Use um loop para emprestar um livro e imprimir seu status.
+
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+        self.disponivel = True
+
+    def emprestar(self):
+        if self.disponivel:
+            self.disponivel = False
+            print(f"O livro '{self.titulo}' foi emprestado.")
+        else:
+            print(f"O livro '{self.titulo}' já está emprestado.")
+
+
+livro1 = Livro("Dom Casmurro", "Machado de Assis")
+livro2 = Livro("1984", "George Orwell")
+livro3 = Livro("O Pequeno Príncipe", "Antoine de Saint-Exupéry")
+
+biblioteca = [livro1, livro2, livro3]
+
+
+for livro in biblioteca:
+    livro.emprestar()
+    print(f"O livro '{livro.titulo}' está disponível: {livro.disponivel}")
+
+
+    livro.emprestar()
+    print(f"O livro '{livro.titulo}' está disponível: {livro.disponivel}")
+     
+O livro 'Dom Casmurro' foi emprestado.
+O livro 'Dom Casmurro' está disponível: False
+O livro 'Dom Casmurro' já está emprestado.
+O livro 'Dom Casmurro' está disponível: False
+O livro '1984' foi emprestado.
+O livro '1984' está disponível: False
+O livro '1984' já está emprestado.
+O livro '1984' está disponível: False
+O livro 'O Pequeno Príncipe' foi emprestado.
+O livro 'O Pequeno Príncipe' está disponível: False
+O livro 'O Pequeno Príncipe' já está emprestado.
+O livro 'O Pequeno Príncipe' está disponível: False
+
+
+     
+3. Filtro com Boolean Masking
+
+Crie um array com páginas fictícias (ex: [200, 328, 96]).
+
+Filtre livros com mais de 100 páginas.
+
+paginas = np.array([200, 328, 96])
+
+livros_mais_de_100_paginas = paginas[paginas > 100]
+print(livros_mais_de_100_paginas)
+     
+[200 328]
+
+
+     
+4. Função com NumPy
+
+Crie um array NumPy com os anos de publicação fictícios (ex: [1899, 1949, 1943]).
+
+Calcule a média dos anos.
+
+anos = np.array([1899, 1949, 1943])
+
+media_anos = np.mean(anos)
+print(media_anos)
+     
+1930.3333333333333
+
+
+     
+🔹 Passo 1: Conecte seu Colab ao GitHub
+
+Antes de enviar, você precisa vincular seu Colab ao GitHub.
+
+Abra seu notebook no Google Colab
+
+  Certifique-se de que seu código está salvo (Ctrl + S ou File > Save).
+
+   em File > Save a copy in GitHub
+Se você não estiver logado, o Google pedirá permissão para acessar sua conta do GitHub.
+
+🔹 Passo 2: Configurar o Repositório
+
+Ao clicar em Save a copy in GitHub, uma janela aparecerá:
+
+✅ Se já tem um repositório criado:
+
+Selecione seu GitHub username.
+
+Escolha o repositório onde quer salvar.
+
+Defina o branch (geralmente main).
+
+Adicione uma mensagem de commit (ex: "Primeiro upload do Colab").
+✅ Se NÃO tem um repositório:
+
+Marque a opção "Create a new repository".
+
+Digite um nome para o repositório (ex: meu-projeto-colab).
+
+Escolha se será público ou privado.
+
+Adicione uma descrição (opcional).
+🔹 Passo 3: Confirmar e Enviar
+
+Depois de configurar:
+
+Clique em OK.
+
+O Colab vai:
+
+    Criar um novo repositório (se necessário).
+
+    Fazer o commit e push automaticamente.
+
+Pronto! Seu código estará no GitHub.
+🔹 Verificando no GitHub
+
+Acesse seu GitHub: https://github.com
+
+Vá até o repositório que você escolheu.
+
+Seu notebook .ipynb estará lá! 🎉
+🔹 Dicas Importantes
+
+✔ Se der erro de autenticação:
+
+Verifique se você autorizou o Colab a acessar o GitHub.
+
+Se necessário, vá em GitHub Settings > Applications e dê permissão.
+✔ Quer atualizar um arquivo existente?
+
+Basta repetir o processo (File > Save a copy in GitHub).
+✔ Quer enviar outros arquivos (dados, imagens)?
+
+Use o Google Drive ou faça upload manual no GitHub.
