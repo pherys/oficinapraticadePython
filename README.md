@@ -1,1 +1,27 @@
-Este Jupyter Notebook armazena o material completo de uma oficina prática de Python (ministrada por Nicole Pessoa com monitoria de Amanda Silva), projetada para guiar os participantes desde os conceitos básicos até tópicos intermediários. O conteúdo inicia com uma revisão de fundamentos essenciais, como variáveis, estruturas de dados (listas, tuplas, dicionários), loops e funções. Em seguida, avança para conceitos mais complexos, incluindo List Comprehensions, manipulação de arquivos de texto e CSV (utilizando Pandas), os princípios de Programação Orientada a Objetos (POO) com classes e herança, e a utilização da biblioteca NumPy para operações matemáticas eficientes. O notebook é repleto de exemplos de código e exercícios práticos para solidificar o aprendizado.
+🎯 Tópicos Abordados no Notebook
+O conteúdo é estruturado para avançar progressivamente:
+
+1. Fundamentos de Python (Revisão)
+Variáveis e Operadores: Tipos de dados, operadores aritméticos e lógicos.
+
+Estruturas de Dados: Conceitos e uso de Listas, Tuplas e Dicionários.
+
+Controle de Fluxo: Uso de condicionais (if/elif/else).
+
+Loops: Iteração com for e while.
+
+Funções: Definição (def) e reutilização de blocos de código.
+
+2. Tópicos Intermediários e Bibliotecas
+Estruturas Avançadas: Otimização com List Comprehensions, Sets e collections.Counter.
+
+Manipulação de Arquivos: Leitura e escrita de arquivos .txt.
+
+Pandas: Introdução à biblioteca com leitura de arquivos .csv.
+
+Programação Orientada a Objetos (POO): Conceitos de Classes, Objetos, __init__, Herança e Polimorfismo.
+
+NumPy: Introdução a arrays, operações vetorizadas (cálculos em massa), slicing e boolean masking (filtros).
+
+🚀 Como Utilizar
+Você pode baixar este arquivo e abri-lo localmente (usando Jupyter Notebook/Lab) ou carregá-lo diretamente no Google Colab para executar e interagir com os blocos de código.
