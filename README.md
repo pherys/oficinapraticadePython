@@ -1,17 +1,1 @@
-# Fernanda Brito
-
-<h3>Percurso laboral:</h3> <p>Transição de carreira (sou formada como bibliotecária) para desenvolvimento de software através de um programa de tecnologia (parceria Alura e Grupo Boticário) e de oportunidades (constam na minha CTPS) que obtive na área de tecnologia no setor de Varejo, setor Bancário, setor de Auditoria e setor de Educação (Moodle). </p>
-<p>Comecei em julho/2024 a graduação em Engenharia da Computação na Univesp.</p>
-<p>Back-end nível Jr:</p>
-<ul>
-  <li>C#</li>
-  <li>Java</li>
-  <li>Nodejs</li>
-</ul>
-
-<p>Front-end nível Jr:</p>
-<ul>
-  <li>Angular</li>
-  <li>React</li>
-</ul>
-<p>Projeto pessoal para Autistas/Não Autistas respondendo perguntas, indicando literatura, perfis, conteúdo e outros: https://instagram.com/pergunteautista</p>
+Este Jupyter Notebook armazena o material completo de uma oficina prática de Python (ministrada por Nicole Pessoa com monitoria de Amanda Silva), projetada para guiar os participantes desde os conceitos básicos até tópicos intermediários. O conteúdo inicia com uma revisão de fundamentos essenciais, como variáveis, estruturas de dados (listas, tuplas, dicionários), loops e funções. Em seguida, avança para conceitos mais complexos, incluindo List Comprehensions, manipulação de arquivos de texto e CSV (utilizando Pandas), os princípios de Programação Orientada a Objetos (POO) com classes e herança, e a utilização da biblioteca NumPy para operações matemáticas eficientes. O notebook é repleto de exemplos de código e exercícios práticos para solidificar o aprendizado.
